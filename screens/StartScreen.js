@@ -15,6 +15,7 @@ import BodyText from "../components/BodyText";
 import NumberContainer from "../components/NumberContainer";
 import { reset } from "expo/build/AR";
 import TitleText from "../components/TitleText";
+import MainButton from "../components/MainButton";
 
 const StartScreen = props => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -51,8 +52,9 @@ const StartScreen = props => {
       <Card style={styles.summaryContainer}>
         <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)} />
-
+        <MainButton onPress={() => props.onStartGame(selectedNumber)}>
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 10,
-    fontFamily: 'open-sans-bold'
+    fontFamily: "open-sans-bold"
   },
   inputContainer: {
     width: 300,
@@ -132,7 +134,7 @@ const styles = StyleSheet.create({
   },
   summaryContainer: {
     margin: 20,
-    alignItems: 'center'
+    alignItems: "center"
   }
 });
 
