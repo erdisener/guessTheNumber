@@ -62,7 +62,7 @@ const GameScreen = props => {
     <View style={styles.screen}>
       <Text>Opponent's Guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
-      <Card style={styles.buttonContainer}>
+      <Card style={styles.ButtonContainer}>
         <Button title="LOWER" onPress={nextGuessHandler.bind(this, "lower")} />
         <Button
           title="GREATER"
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center"
   },
-  buttonContainer: {
+  ButtonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 20,

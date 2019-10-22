@@ -11,8 +11,10 @@ import {
 import Card from "../components/Card";
 import Colors from "../constants/colors";
 import Input from "../components/Input";
+import BodyText from "../components/BodyText";
 import NumberContainer from "../components/NumberContainer";
 import { reset } from "expo/build/AR";
+import TitleText from "../components/TitleText";
 
 const StartScreen = props => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -47,7 +49,7 @@ const StartScreen = props => {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected</Text>
+        <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
         <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)} />
 
@@ -62,9 +64,9 @@ const StartScreen = props => {
       }}
     >
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a New Game!</Text>
+        <TitleText style={styles.title}>Start a New Game!</TitleText>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <BodyText>Select a Number</BodyText>
           <Input
             style={styles.input}
             blurOnSubmit
@@ -75,15 +77,15 @@ const StartScreen = props => {
             onChangeText={numberInputHandler}
             value={enteredValue}
           />
-          <View style={styles.buttonContainer}>
-            <View style={styles.button}>
+          <View style={styles.ButtonContainer}>
+            <View style={styles.Button}>
               <Button
                 title="Confirm"
                 onPress={confirmInputHandler}
                 color={Colors.primary}
               />
             </View>
-            <View style={styles.button}>
+            <View style={styles.Button}>
               <Button
                 title="Reset"
                 onPress={resetInputhandler}
@@ -107,20 +109,21 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 20,
-    marginVertical: 10
+    marginVertical: 10,
+    fontFamily: 'open-sans-bold'
   },
   inputContainer: {
     width: 300,
     maxWidth: "80%",
     alignItems: "center"
   },
-  buttonContainer: {
+  ButtonContainer: {
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
     paddingHorizontal: 15
   },
-  button: {
+  Button: {
     width: 100
   },
   input: {
