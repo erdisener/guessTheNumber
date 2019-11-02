@@ -137,7 +137,7 @@ const GameScreen = props => {
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card
         style={[
-          ...styles.ButtonContainer,
+          styles.ButtonContainer,
           { marginTop: availableDeviceHeight > 600 ? 20 : 5 }
         ]}
       >

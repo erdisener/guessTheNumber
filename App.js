@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 
@@ -10,7 +10,7 @@ import OverScreen from "./screens/OverScreen";
 
 const fetchFonts = () => {
   return Font.loadAsync({
-    "open-sans": require('./assets/fonts/OpenSans-Regular.ttf'),
+    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf")
   });
 };
@@ -25,7 +25,7 @@ export default function App() {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setDataLoaded(true)}
-        onError={(err) => console.log(err)}
+        onError={err => console.log(err)}
       />
     );
   }
@@ -60,10 +60,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <Header title="Guess a Number" />
       {content}
-    </View>
+    </SafeAreaView>
   );
 }
 
